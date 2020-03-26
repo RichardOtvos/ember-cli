@@ -31,7 +31,7 @@ describe('Acceptance: ember generate and destroy packages', function() {
 
     await emberNew();
     await modifyPackages([{ name: 'ember-cli-jshint', dev: true }]);
-    emberGenerateDestroy(args, file => {
+    await emberGenerateDestroy(args, file => {
       expect(dir('packages')).to.exist;
       expect(file('packages/.jshintrc')).to.not.exist;
     });
